@@ -1,0 +1,39 @@
+version: '3.7'
+
+services:
+  php-app:
+    image: php:apache
+    container_name: php_app
+    ports:
+      - '80:80'
+    restart: unless-stopped
+    depends_on:
+      - postgres-app
+      - redis-app
+    networks:
+      - internet
+      - localnet
+
+  postgres-app:
+    image: postgres
+    container_name: postgres_app
+    restart: unless-stopped
+    environment:
+      - 'POSTGRES_PASSWORD=12345678'
+    networks:
+      - localnet
+
+  redis-app:
+    image: redis
+    container_name: redis_app
+    restart: unless-stopped
+    networks:
+      - localnet
+
+networks:
+  internet:
+    name: internet
+    driver: bridge
+  localnet:
+    name: localnet
+    driver: bridge

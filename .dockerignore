@@ -1,0 +1,64 @@
+# Created by ChatGPT
+
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Packaging / build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Type checker / linter caches
+.mypy_cache/
+.pyre/
+.ruff_cache/
+
+# IDE / editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+
+# Local config / secrets (adjust to your project)
+.env
+.env.*
+
+# Docker artifacts
+Dockerfile*
+docker-compose*.yml
+
+# Node (if your repo has frontend tooling)
+node_modules/
+
+# Database volumes / local data
+*.sqlite3
+
+# Project-specific
+.cache/
+
+# End of ChatGPT

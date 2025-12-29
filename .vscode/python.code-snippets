@@ -1,0 +1,42 @@
+{
+  "docstring": {
+    "scope": "python",
+    "prefix": "ds",
+    "body": [
+      "'''$1'''"
+    ],
+    "description": "print multiline string"
+  },
+  "print": {
+    "scope": "python",
+    "prefix": "pp",
+    "body": [
+      "print($1)"
+    ],
+    "description": "print"
+  },
+  "input str": {
+    "scope": "python",
+    "prefix": "si",
+    "body": [
+      "input($1)"
+    ],
+    "description": "str input"
+  },
+  "input int": {
+    "scope": "python",
+    "prefix": "ii",
+    "body": [
+      "int(input($1))"
+    ],
+    "description": "int input"
+  },
+  "input float": {
+    "scope": "python",
+    "prefix": "fi",
+    "body": [
+      "float(input($1))"
+    ],
+    "description": "float input"
+  }
+}

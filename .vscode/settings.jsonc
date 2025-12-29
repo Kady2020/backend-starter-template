@@ -1,0 +1,134 @@
+{
+  // ─────────────────────────────── Редактор ───────────────────────────────
+  // Стартовый редактор при запуске
+  "workbench.startupEditor": "none",
+  // Цветовая тема редактора
+  "workbench.colorTheme": "Material Theme Darker High Contrast",
+  // Тема иконок в редакторе
+  "workbench.iconTheme": "material-icon-theme",
+  // Тема иконок продукта
+  "workbench.productIconTheme": "material-product-icons",
+  // Кастомизация цветов интерфейса
+  "workbench.colorCustomizations": {
+    "panel.border": "#FAEBD7", // Цвет рамки панели
+    "statusBar.border": "#FAEBD7", // Цвет рамки строки состояния
+    "editorLineNumber.foreground": "#555", // Цвет номеров строк
+    "editorLineNumber.activeForeground": "#FAEBD7" // Цвет активного номера строки
+  },
+  // Шрифт редактора
+  "editor.fontFamily": "JetBrains Mono",
+  // Размер шрифта редактора
+  "editor.fontSize": 18,
+  // Толщина шрифта
+  "editor.fontWeight": 400,
+  // Высота строки
+  "editor.lineHeight": 24,
+  // Межбуквенный интервал
+  "editor.letterSpacing": 0.8,
+  // Шрифт терминала
+  "terminal.integrated.fontFamily": "JetBrains Mono",
+  // Размер шрифта терминала
+  "terminal.integrated.fontSize": 18,
+  // Профиль терминала по умолчанию для macOS
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  // Размер табуляции
+  "editor.tabSize": 2,
+  // Отображение пробелов и табов
+  "editor.renderWhitespace": "none",
+  // Лигатуры шрифта включены
+  "editor.fontLigatures": true,
+  // Масштабирование шрифта колесом мыши отключено
+  "editor.mouseWheelZoom": false,
+  // Тип мигания курсора
+  "editor.cursorBlinking": "expand",
+  // Плавная анимация курсора включена
+  "editor.cursorSmoothCaretAnimation": "on",
+  // Не закрывать пустые группы редакторов
+  "workbench.editor.closeEmptyGroups": false,
+  // Подсказки при наведении отключены
+  "editor.hover.enabled": false,
+  // Миникарта отключена
+  "editor.minimap.enabled": false,
+  // Максимальная ширина миникарты
+  "editor.minimap.maxColumn": 50,
+  // Автоматическое скрытие миникарты
+  "editor.minimap.autohide": true,
+  // Масштаб миникарты
+  "editor.minimap.scale": 2,
+  // Автосохранение при смене окна
+  "files.autoSave": "onWindowChange",
+  // Доверять небезопасным файлам
+  "security.workspace.trust.untrustedFiles": "open",
+  // Исключенные из просмотра файлы и папки
+  "files.exclude": {
+    "**/.git": false // Папка .git видна
+  },
+  // Режим обновлений редактора
+  "update.mode": "manual",
+  // Игнорируемые настройки синхронизации
+  "settingsSync.ignoredSettings": [],
+  // Игнорируемые расширения при синхронизации
+  "settingsSync.ignoredExtensions": [],
+  // Подтверждение удаления в проводнике отключено
+  "explorer.confirmDelete": false,
+  // Подтверждение перетаскивания в проводнике отключено
+  "explorer.confirmDragAndDrop": false,
+  // Уровень телеметрии (отключена)
+  "telemetry.telemetryLevel": "off",
+  // Разрешать коммит без ввода сообщения в окне Git (если заполнено поле сообщения)
+  "git.enableSmartCommit": true,
+  // Не спрашивать подтверждение при синхронизации (Sync)
+  "git.confirmSync": false,
+  // Автоматически делать fetch из удаленного репозитория
+  "git.autofetch": true,
+  // Форматирование при сохранении включено
+  "editor.formatOnSave": true,
+  // Форматирование при вставке отключено
+  "editor.formatOnPaste": false,
+  // Удалять пустые строки в конце файла
+  "files.trimFinalNewlines": true,
+  // Вставлять пустую строку в конце файла
+  "files.insertFinalNewline": true,
+  // Удалять пробелы в конце строк
+  "files.trimTrailingWhitespace": true,
+  // ─────────────────────────────── Расширения ───────────────────────────────
+  // Black Formatter (Python):
+  "[python]": {
+    // Форматтер по умолчанию (Black Formatter)
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    // Не форматировать во время ввода
+    "editor.formatOnType": false,
+    // Размер табуляции
+    "editor.tabSize": 4,
+    // Использовать пробелы вместо табов
+    "editor.insertSpaces": true,
+    // Визуальные направляющие в редакторе (не влияют на форматирование)
+    "editor.rulers": [
+      {
+        "column": 88, // Визуальная линия указывающая на максимальную длину строки (обычно совпадает с лимитом Black)
+        "color": "#555" // Цвет визуальной линии максимальной длины строки
+      }
+    ],
+    // Действия при сохранении Python-файла
+    "editor.codeActionsOnSave": {
+      // Упорядочивать импорты только при явном сохранении (не при автосохранении)
+      "source.organizeImports": "explicit"
+    }
+  },
+  // Аргументы запуска Black (реальная настройка форматирования)
+  "black-formatter.args": [
+    "--line-length",
+    "88"
+  ],
+  // Python Indent:
+  // Удалять строки, содержащие только пробелы
+  "pythonIndent.trimLinesWithOnlyWhitespace": true,
+  // Indent Rainbow:
+  // Включить индикатор отступов для указанных языков
+  "indentRainbow.includedLanguages": [
+    "python"
+  ],
+  // ECSSTractor:
+  // Включить вложенность BEM в ECSSTractor:
+  "ecsstractor_port.bem_nesting": true
+}
