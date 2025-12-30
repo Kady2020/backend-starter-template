@@ -358,7 +358,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
         ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
-#### Включить плагины в ~/.zshrc: plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+#### Включить плагины: ~/.zshrc: plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 
 
@@ -608,15 +608,91 @@ brew uninstall python && brew cleanup python
     brew uninstall python@3.x
 ```
 
-## venv
+## Venv
 `Виртуальное окружение`
 
 
 ### Создать окружение
+
+> Создать виртуальное окружение в папке проекта.
+
+```bash
+python3 -m venv .venv
+```
+
+> Добавить папку окружения в .gitignore, чтобы не коммитить окружение.
+
+```bash
+echo '.venv/' >> .gitignore
+```
+
+> Обновить pip внутри окружения.
+
+```bash
+.venv/bin/python -m pip install --upgrade pip
+```
+
+
 ### Активировать окружение
-### Проверить окружение
+
+> Активировать окружение для текущей сессии терминала.
+
+```bash
+source .venv/bin/activate
+```
+
+
+### Проверить
+
+> Проверить, что python и pip идут из .venv.
+
+```bash
+which python
+python --version
+which pip
+pip --version
+```
+
+> Проверить переменную активного окружения.
+
+```bash
+echo $VIRTUAL_ENV
+```
+
 ### Установить и зафиксировать зависимости
+
+> Установить пакет.
+
+```bash
+pip install <package>
+```
+
+> Зафиксировать зависимости в requirements.txt.
+
+```bash
+pip freeze > requirements.txt
+```
+
+> Установить зависимости из requirements.txt.
+
+```bash
+pip install -r requirements.txt
+```
+
 ### Деактивировать окружение
+
+> Выйти из окружения и вернуться к системному Python.
+
+```bash
+deactivate
+```
+
 ### Удалить окружение
 
-## poetry
+> Удалить папку окружения.
+
+```bash
+rm -rf .venv
+```
+
+## Poetry
