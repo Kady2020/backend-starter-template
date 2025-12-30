@@ -549,47 +549,25 @@ rm ~/.ssh/id_ed25519 ~/.ssh/id_ed25519.pub
 > Показывает доступные версии python@... в Homebrew.
 
 ```bash
-brew search python@
+brew search python
 ```
 
 > Устанавливает выбранную версию Python через Homebrew.
 
 ```bash
-brew install python@3.x
+brew install python
 ```
 
-### Быстрое переключение «главной» версии (сим-линк python3)
-
-> Отвязывает текущую версию python@... (убирает симлинки).
+> Отвязывает текущую версию python@3.11 (убирает симлинки).
 
 ```bash
 brew unlink python@3.11
 ```
 
-> Делает указанную версию python3 основной (пересоздает симлинки).
+> Делает указанную версию python@3.12 основной (пересоздает симлинки).
 
 ```bash
 brew link --overwrite --force python@3.12
-```
-
-### Подключаем Homebrew к zsh, чтобы brew-пакеты шли раньше системных
-
-> Добавляет shellenv Homebrew в ~/.zprofile, чтобы /opt/homebrew/bin был первым в PATH.
-
-```bash
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-```
-
-> Применяет shellenv в текущей сессии терминала.
-
-```bash
-eval "$(/opt/homebrew/bin/brew shellenv)"
-```
-
-> Перезапускает zsh, чтобы окружение применилось.
-
-```bash
-exec zsh -l
 ```
 
 ### Проверка
