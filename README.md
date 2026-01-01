@@ -59,28 +59,27 @@ which brew && brew -v && brew doctor
 cat >> ~/.zshrc <<'EOF'
 # Скрипт проверки: «Краткий паспорт brew»
 # Запуск: brew_where  |  brew_where <formula or cask> | brew_where_one <formula>
-
 brew_where () {
     local prefix filter SEP
     prefix="$(brew --prefix)"
     filter="$1"
     SEP="│"
 
-    local -i W_N=3 W_F=24 W_V=12 W_O=8 W_B=8
-    local -i W_APP=32 W_A=12 W_C=44
+    local -i W_N=3 W_NAME=24 W_VER=14 W_LOC=14 W_LINK=44
 
     _trim () { local s="$1"; local -i w="$2"; s="${s//$'\n'/ }";
                (( ${#s} > w )) && print -r -- "${s[1,$((w-1))]}…" || print -r -- "$s"; }
-    _line () { printf '─%.0s' {1..110}; echo; }
+    _line () { printf '─%.0s' {1..125}; echo; }
 
+    # Таблица CLI header
     echo "CLI header"
     _line
     printf "%*s %s %-*s %s %-*s %s %-*s %s %-*s\n" \
-        $W_N "№" "$SEP" \
-        $W_F "Пакет" "$SEP" \
-        $W_V "Версия" "$SEP" \
-        $W_O "Стрелка" "$SEP" \
-        $W_B "Команда"
+        $W_N    "№" "$SEP" \
+        $W_NAME "Пакет" "$SEP" \
+        $W_VER  "Версия" "$SEP" \
+        $W_LOC  "Cellar" "$SEP" \
+        $W_LINK "opt"
     _line
 
     local i=0 line f ver opt_col bin_col cellar
@@ -91,36 +90,39 @@ brew_where () {
 
         ((i++))
 
+        cellar="$prefix/Cellar/$f/$ver"
+
+        bin_col="—"
+        [[ -d "$cellar" ]] && bin_col="bundle"
+
         opt_col="—"
         [[ -L "$prefix/opt/$f" ]] && opt_col="symlink"
 
-        bin_col="—"
-        cellar="$prefix/Cellar/$f/$ver"
-        [[ -d "$cellar/bin" && -n "$cellar/bin"/*(N) ]] && bin_col="есть"
-
         printf "%*s %s %-*s %s %-*s %s %-*s %s %-*s\n" \
-            $W_N "$i" "$SEP" \
-            $W_F "$(_trim "$f" $W_F)" "$SEP" \
-            $W_V "$(_trim "$ver" $W_V)" "$SEP" \
-            $W_O "$(_trim "$opt_col" $W_O)" "$SEP" \
-            $W_B "$(_trim "$bin_col" $W_B)"
+            $W_N    "$i" "$SEP" \
+            $W_NAME "$(_trim "$f" $W_NAME)" "$SEP" \
+            $W_VER  "$(_trim "$ver" $W_VER)" "$SEP" \
+            $W_LOC  "$(_trim "$bin_col" $W_LOC)" "$SEP" \
+            $W_LINK "$(_trim "$opt_col" $W_LINK)"
     done < <(brew list --formula --versions 2>/dev/null)
 
     echo
 
+    # Таблица GUI header
     echo "GUI header"
     _line
-    printf "%*s %s %-*s %s %-*s %s %-*s\n" \
-        $W_N   "№" "$SEP" \
-        $W_APP "Приложение" "$SEP" \
-        $W_A   "Тушка" "$SEP" \
-        $W_C   "Стрелка"
+    printf "%*s %s %-*s %s %-*s %s %-*s %s %-*s\n" \
+        $W_N    "№" "$SEP" \
+        $W_NAME "Приложение" "$SEP" \
+        $W_VER  "Версия" "$SEP" \
+        $W_LOC  "/Applications" "$SEP" \
+        $W_LINK "/Caskroom"
     _line
 
     setopt local_options null_glob
 
     i=0
-    local cask cver cdir app_path app_name a_col c_col
+    local cask cver cdir app_path app_name v_col a_col c_col
     while IFS= read -r line; do
         cask="${line%% *}"
         cver="${line#* }"
@@ -137,26 +139,30 @@ brew_where () {
 
         ((i++))
 
+        v_col="$cver"
+
         a_col="—"
         [[ -d "/Applications/$app_name" ]] && a_col="bundle"
         [[ -L "/Applications/$app_name" ]] && a_col="symlink"
 
         c_col="—"
         if [[ -L "$app_path" ]]; then
-            c_col="symlink → $(readlink "$app_path")"
+            c_col="symlink"
         elif [[ -d "$app_path" ]]; then
             c_col="bundle"
         fi
-        [[ ${#c_col} -gt $W_C ]] && c_col="${c_col[1,$((W_C-1))]}…"
+        [[ ${#c_col} -gt $W_LINK ]] && c_col="${c_col[1,$((W_LINK-1))]}…"
 
-        printf "%*s %s %-*s %s %-*s %s %-*s\n" \
-            $W_N "$i" "$SEP" \
-            $W_APP "$(_trim "$app_name" $W_APP)" "$SEP" \
-            $W_A   "$(_trim "$a_col" $W_A)" "$SEP" \
-            $W_C   "$c_col"
+        printf "%*s %s %-*s %s %-*s %s %-*s %s %-*s\n" \
+            $W_N    "$i" "$SEP" \
+            $W_NAME "$(_trim "$app_name" $W_NAME)" "$SEP" \
+            $W_VER  "$(_trim "$v_col" $W_VER)" "$SEP" \
+            $W_LOC  "$(_trim "$a_col" $W_LOC)" "$SEP" \
+            $W_LINK "$c_col"
     done < <(brew list --cask --versions 2>/dev/null)
 }
 
+# Подробности по формуле (когда нужно, а где тушка и какие команды)
 brew_where_one () {
     local f="$1" prefix ver cellar
     [[ -z "$f" ]] && { echo "Использование: brew_where_one <formula>"; return 1; }
