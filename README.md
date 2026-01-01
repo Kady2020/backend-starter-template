@@ -344,13 +344,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 #### Установить полезные плагины
 
-> Установить плагин автоподсказок.
-
-```bash
-    git clone https://github.com/zsh-users/zsh-autosuggestions \
-        ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-```
-
 > Установить плагин подсветки синтаксиса.
 
 ```bash
@@ -358,7 +351,21 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
         ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
-#### Включить плагины: ~/.zshrc: plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+> Установить плагин автоподсказок команд.
+
+```bash
+    git clone https://github.com/zsh-users/zsh-autosuggestions \
+        ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+> Установить плагин автоподсказок директорий.
+
+```bash
+    git clone https://github.com/marlonrichert/zsh-autocomplete \
+        ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete
+```
+
+#### Включить плагины в .zshrc: plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-autocomplete)
 
 
 
