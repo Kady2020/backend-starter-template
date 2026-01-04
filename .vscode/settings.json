@@ -1,9 +1,9 @@
 {
-  // ─────────────────────────────── Редактор ───────────────────────────────
+  //! Редактор
   // Стартовый редактор при запуске
   "workbench.startupEditor": "none",
   // Цветовая тема редактора
-  "workbench.colorTheme": "Material Theme Darker High Contrast",
+  "workbench.colorTheme": "Default Dark Modern",
   // Тема иконок в редакторе
   "workbench.iconTheme": "material-icon-theme",
   // Тема иконок продукта
@@ -46,13 +46,13 @@
   // Не закрывать пустые группы редакторов
   "workbench.editor.closeEmptyGroups": false,
   // Подсказки при наведении отключены
-  "editor.hover.enabled": false,
+  "editor.hover.enabled": "off",
   // Миникарта отключена
   "editor.minimap.enabled": false,
   // Максимальная ширина миникарты
   "editor.minimap.maxColumn": 50,
   // Автоматическое скрытие миникарты
-  "editor.minimap.autohide": true,
+  "editor.minimap.autohide": "mouseover",
   // Масштаб миникарты
   "editor.minimap.scale": 2,
   // Автосохранение при смене окна
@@ -91,7 +91,7 @@
   "files.insertFinalNewline": true,
   // Удалять пробелы в конце строк
   "files.trimTrailingWhitespace": true,
-  // ─────────────────────────────── Расширения ───────────────────────────────
+  //! Расширения
   // Black Formatter (Python):
   "[python]": {
     // Форматтер по умолчанию (Black Formatter)

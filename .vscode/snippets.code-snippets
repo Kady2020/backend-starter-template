@@ -1,11 +1,12 @@
 {
+  //! Python
   "docstring": {
     "scope": "python",
     "prefix": "ds",
     "body": [
       "'''$1'''"
     ],
-    "description": "print multiline string"
+    "description": "Insert docstring"
   },
   "print": {
     "scope": "python",
@@ -13,7 +14,7 @@
     "body": [
       "print($1)"
     ],
-    "description": "print"
+    "description": "Insert print()"
   },
   "input str": {
     "scope": "python",
@@ -21,22 +22,14 @@
     "body": [
       "input($1)"
     ],
-    "description": "str input"
+    "description": "Read string input"
   },
   "input int": {
     "scope": "python",
     "prefix": "ii",
     "body": [
-      "int(input($1))"
+      "int$1(input())"
     ],
-    "description": "int input"
-  },
-  "input float": {
-    "scope": "python",
-    "prefix": "fi",
-    "body": [
-      "float(input($1))"
-    ],
-    "description": "float input"
+    "description": "Read input and cast to a type"
   }
 }
