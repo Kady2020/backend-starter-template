@@ -5,13 +5,15 @@
 ## Оглавление
 
 1. [Homebrew](#homebrew)
-2. [Homebrew formulae: CLI-утилиты](#homebrew-formulae-cli-утилиты)
-3. [Homebrew casks: GUI-приложения](#homebrew-casks-gui-приложения)
+2. [Homebrew formulae](#homebrew-formulae)
+3. [Homebrew casks](#homebrew-casks)
 4. [Oh My Zsh](#oh-my-zsh)
 5. [Git](#git)
 6. [GitHub SSH](#github-ssh)
 7. [GitLab SSH](#gitlab-ssh)
 8. [Python](#python)
+9. [Venv](#venv)
+10. [Poetry](#poetry)
 
 
 ## Homebrew
@@ -374,7 +376,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 #### Включить плагины в .zshrc: plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-autocomplete)
 
 
-
 ### Проверить
 
 > Проверить версию zsh и наличие пути до Oh My Zsh $ZSH.
@@ -413,6 +414,7 @@ chsh -s /bin/zsh
 
 ## Git
 `Система контроля версий`
+
 
 ### Установить
 
