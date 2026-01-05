@@ -80,8 +80,8 @@ brew_where () {
         $W_N    "№" "$SEP" \
         $W_NAME "Пакет" "$SEP" \
         $W_VER  "Версия" "$SEP" \
-        $W_LOC  "Cellar" "$SEP" \
-        $W_LINK "opt"
+        $W_LOC  "/Cellar" "$SEP" \
+        $W_LINK "/opt"
     _line
 
     local i=0 line f ver opt_col bin_col cellar

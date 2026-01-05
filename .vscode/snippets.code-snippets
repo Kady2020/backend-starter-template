@@ -1,35 +1,35 @@
 {
-  //! Python
+  // Python
+  "print()": {
+    "scope": "python",
+    "prefix": "pp",
+    "body": [
+      "print($1)"
+    ],
+    "description": "Вставить print()"
+  },
+  "input()": {
+    "scope": "python",
+    "prefix": "si",
+    "body": [
+      "input($1)"
+    ],
+    "description": "Вставить input()"
+  },
+  "int(input())": {
+    "scope": "python",
+    "prefix": "ii",
+    "body": [
+      "int$1(input())"
+    ],
+    "description": "Вставить int(input()) или привести input() к типу"
+  },
   "docstring": {
     "scope": "python",
     "prefix": "ds",
     "body": [
       "'''$1'''"
     ],
-    "description": "Insert docstring"
-  },
-  "print": {
-    "scope": "python",
-    "prefix": "pp",
-    "body": [
-      "print($1)"
-    ],
-    "description": "Insert print()"
-  },
-  "input str": {
-    "scope": "python",
-    "prefix": "si",
-    "body": [
-      "input($1)"
-    ],
-    "description": "Read string input"
-  },
-  "input int": {
-    "scope": "python",
-    "prefix": "ii",
-    "body": [
-      "int$1(input())"
-    ],
-    "description": "Read input and cast to a type"
+    "description": "Вставить docstring"
   }
 }
