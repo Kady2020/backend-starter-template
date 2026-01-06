@@ -26,7 +26,8 @@
   "window.zoomLevel": 0.2,
   "editor.cursorBlinking": "expand",
   "editor.cursorSmoothCaretAnimation": "on",
-  "editor.hover.enabled": false,
+  "editor.hover.enabled": "off", // Включить подсказки при наведении (VS Code)
+  // "editor.hover.enabled": false, // Включить подсказки при наведении (Cursor)
   "editor.minimap.enabled": false,
   "editor.minimap.scale": 2,
   "editor.formatOnSave": true,
