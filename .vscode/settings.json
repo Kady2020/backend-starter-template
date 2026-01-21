@@ -26,6 +26,7 @@
   "window.zoomLevel": 0.2,
   "editor.cursorBlinking": "expand",
   "editor.cursorSmoothCaretAnimation": "on",
+  "editor.inlineSuggest.enabled": true,
   "editor.hover.enabled": "off", // Включить подсказки при наведении (VS Code)
   // "editor.hover.enabled": false, // Включить подсказки при наведении (Cursor)
   "editor.minimap.enabled": false,
@@ -40,7 +41,11 @@
   "files.insertFinalNewline": true,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  // Настройки расширений
+  "cursor.composer.textSizeScale": 1.15,
+  "cursor.composer.usageSummaryDisplay": "always",
+  "cursor.terminal.usePreviewBox": true,
+  "cursor.cpp.enablePartialAccepts": true,
+  // Расширения
   // autopep8 / Black
   "[python]": {
     "editor.defaultFormatter": "ms-python.autopep8", // Форматтер по умолчанию: "ms-python.autopep8" / "ms-python.black-formatter"
@@ -67,8 +72,9 @@
   "pythonIndent.trimLinesWithOnlyWhitespace": true, // Удалить строки, содержащие только пробелы: true / false
   // Indent Rainbow:
   "indentRainbow.includedLanguages": [
-    "python" // Полсветка отступов для Python
+    "python" // Подсветка отступов для Python
   ],
   // eCSStractor:
-  "ecsstractor_port.bem_nesting": true // Включить вложенность BEM: true / false
+  "ecsstractor_port.bem_nesting": true,
+  "chatgpt.commentCodeLensEnabled": false // Включить вложенность BEM: true / false
 }

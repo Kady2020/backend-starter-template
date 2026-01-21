@@ -1,0 +1,55 @@
+name: backend-starter-template
+version: 1.0.0
+schema: v1
+
+models:
+# OLLAMA (http://localhost:11434)
+  - name: Ollama Chat (gemma3:12b)
+    provider: ollama
+    model: gemma3:12b
+    # apiBase: http://localhost:11434
+    roles:
+      - chat
+      - edit
+      - apply
+
+  - name: Ollama Autocomplete (qwen2.5-coder)
+    provider: ollama
+    model: qwen2.5-coder:14b
+    # apiBase: http://localhost:11434
+    roles:
+      - autocomplete
+
+  - name: Ollama Embeddings (nomic)
+    provider: ollama
+    model: nomic-embed-text:latest
+    # apiBase: http://localhost:11434
+    roles:
+      - embed
+
+# LM STUDIO (http://localhost:1234/v1)
+  - name: LM Studio Chat (gemma3:12b)
+    provider: openai
+    model: gemma3:12b
+    apiBase: http://localhost:1234/v1
+    apiKey: lm-studio
+    roles:
+      - chat
+      - edit
+      - apply
+
+  - name: LM Studio Autocomplete (qwen2.5-coder)
+    provider: openai
+    model: qwen2.5-coder:14b
+    apiBase: http://localhost:1234/v1
+    apiKey: lm-studio
+    roles:
+      - autocomplete
+
+  - name: LM Studio Embeddings (nomic)
+    provider: openai
+    model: nomic-embed-text:latest
+    apiBase: http://localhost:1234/v1
+    apiKey: lm-studio
+    roles:
+      - embed
