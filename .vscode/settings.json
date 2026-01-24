@@ -54,7 +54,7 @@
     "editor.tabSize": 4, // Размер табуляции
     "editor.rulers": [
       {
-        "column": 88, // Лимит максимальной длины строки (не влияет на форматирование)
+        "column": 88, // Лимит макс. длины строки (не влияет на форматирование)
         "color": "#666666" // Цвет линии максимальной длины строки
       }
     ],
@@ -65,7 +65,7 @@
   },
   // Аргументы запуска autopep8 / Black:
   "black-formatter.args": [
-    "--line-length", // Лимит максимальной длины строки (влияет на форматирование)
+    "--line-length", // Лимит макс. длины строки (влияет на форматирование)
     "88"
   ],
   // Python Indent:
@@ -75,6 +75,7 @@
     "python" // Подсветка отступов для Python
   ],
   // eCSStractor:
-  "ecsstractor_port.bem_nesting": true,
-  "chatgpt.commentCodeLensEnabled": false // Включить вложенность BEM: true / false
+  "ecsstractor_port.bem_nesting": true, // Включить вложенность BEM: true / false
+  // Codex
+  "chatgpt.commentCodeLensEnabled": false // Включить CodeLens-комментарии от расширения ChatGPT над кодом
 }
