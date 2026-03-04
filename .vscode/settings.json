@@ -27,6 +27,7 @@
   "editor.cursorBlinking": "expand",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.inlineSuggest.enabled": true,
+  "editor.snippetSuggestions": "top",
   "editor.hover.enabled": "off", // Включить подсказки при наведении (VS Code)
   // "editor.hover.enabled": false, // Включить подсказки при наведении (Cursor)
   "editor.minimap.enabled": false,
@@ -67,6 +68,17 @@
   "black-formatter.args": [
     "--line-length", // Лимит макс. длины строки (влияет на форматирование)
     "88"
+  ],
+  // Pylance Type Checking:
+  "python.analysis.typeCheckingMode": "basic", // Режим проверки типов: off / basic / strict
+  "python.analysis.diagnosticMode": "workspace", // Анализировать весь проект (workspace)
+  // Mypy Type Checker:
+  // Требуется: mypy в venv + расширение ms-python.mypy-type-checker
+  "mypy-type-checker.importStrategy": "fromEnvironment", // Использовать mypy из текущего venv
+  "mypy-type-checker.reportingScope": "workspace", // Проверять весь проект (workspace)
+  "mypy-type-checker.preferDaemon": false, // dmypy: быстрее на больших проектах, но может быть капризным
+  "mypy-type-checker.args": [
+    "--pretty"
   ],
   // Python Indent:
   "pythonIndent.trimLinesWithOnlyWhitespace": true, // Удалить строки, содержащие только пробелы: true / false

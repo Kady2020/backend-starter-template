@@ -1,4 +1,4 @@
-name: backend-starter-template
+name: Local LLM
 version: 1.0.0
 schema: v1
 
@@ -13,7 +13,7 @@ models:
       - edit
       - apply
 
-  - name: Ollama Autocomplete (qwen2.5-coder)
+  - name: Ollama Autocomplete (qwen2.5-coder:14b)
     provider: ollama
     model: qwen2.5-coder:14b
     # apiBase: http://localhost:11434
@@ -38,7 +38,7 @@ models:
       - edit
       - apply
 
-  - name: LM Studio Autocomplete (qwen2.5-coder)
+  - name: LM Studio Autocomplete (qwen2.5-coder:14b)
     provider: openai
     model: qwen2.5-coder:14b
     apiBase: http://localhost:1234/v1

@@ -13,6 +13,7 @@
     "diz.ecsstractor-port",
     "editorconfig.editorconfig",
     "ms-python.flake8",
+    "ms-python.mypy-type-checker",
     "oderwat.indent-rainbow",
     "pkief.material-icon-theme",
     "pkief.material-product-icons",

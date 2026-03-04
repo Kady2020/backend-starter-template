@@ -581,18 +581,6 @@ brew search python@
 brew install python@3.x
 ```
 
-> Отвязать текущую версию python@3.11, убрать симлинки.
-
-```bash
-brew unlink python@3.11
-```
-
-> Сделать указанную версию python@3.12 основной, пересоздать симлинки.
-
-```bash
-brew link --overwrite --force python@3.12
-```
-
 ### Проверить
 
 > Проверить путь, вывести версии python3 и pip3.
@@ -633,6 +621,7 @@ brew uninstall python && brew cleanup python
 
 ```bash
 python3 -m venv .venv
+/opt/homebrew/bin/python3.12 -m venv .venv
 ```
 
 > Добавить папку окружения в .gitignore, чтобы не коммитить окружение.
@@ -717,7 +706,7 @@ rm -rf .venv
 
 
 ### Установить
-Здесь установка через ollama xthtp brew
+Здесь установка через ollama  brew
 Установка моделей gemma3:12b qwen2.5-coder через brew
 Установка и связь с continue
 Копирование yaml проектного в системный
@@ -729,3 +718,21 @@ rm -rf .venv
 ###
 
 ## LM Studio
+
+## Правила наименования проекта
+
+<class>-<source>-<source-key>-<topic-or-main-tech>
+
+class: app | edu | lib | svc | tpl
+
+edu-stepik-c575-selenium
+edu-youtube-fls-grid-layout
+svc-internal-amka-auth-api
+tpl-internal-core-starter-kit
+
+## Правила наименования коммитов
+
+<type>(<scope>): <subject>
+type: feat | fix | test | docs | refactor | chore | ci | edu
+scope: core | deps | git | ci | readme | api | ui | selenium | pytest
+subject: add ... | fix ... | update ... | refactor ...

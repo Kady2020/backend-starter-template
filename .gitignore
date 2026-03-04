@@ -71,4 +71,14 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,osx,linux
 
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
 .venv/
+venv/
+
+# Allure
+allure-results/
+allure-report/
