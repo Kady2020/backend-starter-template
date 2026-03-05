@@ -20,7 +20,7 @@
     "scope": "python",
     "prefix": "ii",
     "body": [
-      "int$1(input())"
+      "int(input($1))"
     ],
     "description": "Вставить int(input()) или привести input() к типу"
   },
