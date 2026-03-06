@@ -733,6 +733,38 @@ tpl-internal-core-starter-kit
 ## Правила наименования коммитов
 
 <type>(<scope>): <subject>
-type: feat | fix | test | docs | refactor | chore | ci | edu
-scope: core | deps | git | ci | readme | api | ui | selenium | pytest
-subject: add ... | fix ... | update ... | refactor ... | etc ...
+scope — optional
+
+type: feat | fix | refactor | chore | ci | docs | edu | test
+scope: core | deps | readme | git | api | ui | selenium | pytest
+subject: add ... | fix ... | update ... | refactor ... | remove ... | rename ...
+
+## Правила наименования веток
+
+<type>/<ticket>-<short-slug>
+ticket — optional
+
+type: feat | fix | refactor | chore | ci | docs | edu | test
+feat/123-add-login-api
+short-slug: add- ... | fix- ... | update- ... | refactor- ... | remove- ... | rename- ...
+
+## Шпаргалка по работе с Git
+
+Локальный merge (без запроса на ревью):
+git switch main
+git switch -c feat/add-something
+git add .
+git commit -m "feat(api): add something"
+git switch main
+git merge --no-edit --no-ff feat/add-something
+git push origin main
+git branch -d feat/add-something
+git push origin --delete feat/add-something
+git fetch -p
+
+Локальный merge (без запроса на ревью):
+git switch main
+git switch -c feat/add-something
+git add .
+git commit -m "feat(api): add something"
+git push -u origin feat/add-something
